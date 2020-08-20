@@ -1,23 +1,15 @@
-<div>
-  <div>
-    <app-header></app-header>
-  </div>
-  <div *ngIf="innerWidth > 993">
-    <img src="assets/images/banner.jpg" width="100%" alt="banner" />
-  </div>
-  <div *ngIf="innerWidth < 993">
-    <img src="assets/images/banner2.jpg" width="100%" alt="banner" />
-  </div>
-  <!-- <app-fulfillments></app-fulfillments> -->
-  <div class="wrapper">
-    <div class="ads banner">
-      <app-adbox></app-adbox>
-    </div>
-    <div>
-      <router-outlet></router-outlet>
-    </div>
-  </div>
-  <div class="footer">
-    <app-footer></app-footer>
-  </div>
-</div>
+<mat-drawer-container class="example-container" hasBackdrop="true">
+    <mat-drawer #drawer mode="side" position="end">I'm a drawer</mat-drawer>
+    <mat-drawer-content>
+        <div class="main-wrapper">
+            <app-header></app-header>
+
+            <button mat-raised-button (click)="drawer.toggle()">Toggle drawer</button>
+            <section class="main-content">
+                <content>
+                    <router-outlet></router-outlet>
+                </content>
+            </section>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

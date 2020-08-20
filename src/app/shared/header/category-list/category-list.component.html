@@ -1,0 +1,27 @@
+<div class="list text-center " *ngIf="categoryList">
+    <ul class="inline-list category-list">
+        <ng-container *ngFor="let list of categoryList; let i = index;">
+            <li (mouseover)="showHoveredList(list)">{{list?.name}}</li>
+        </ng-container>
+    </ul>
+</div>
+<div class="hovered-menu" *ngIf="show">
+    <div class="list-container" *ngIf="activeList.children_data.length > 0">
+        <ul class="inline-list sub-category-list ">
+            <ng-container *ngFor="let hoveredList of activeList.children_data; let i = index">
+                <li> {{hoveredList?.name}}</li>
+            </ng-container>
+        </ul>
+    </div>
+
+    <div class="list-container" *ngIf="activeList.featured_brands.length > 0">
+        <div class="feature">
+            <h4>Feature Brand</h4>
+            <ul class="inline-list sub-category-list ">
+                <ng-container *ngFor="let brands of activeList.featured_brands; let i = index">
+                    <li> {{brands?.label}}</li>
+                </ng-container>
+            </ul>
+        </div>
+    </div>
+</div>

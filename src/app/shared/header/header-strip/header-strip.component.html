@@ -1,0 +1,30 @@
+<div class="header-strip">
+    <div class="container">
+        <div class="header-tabs">
+            <ul class="nav-links">
+                <ng-container *ngFor="let link of stripTabLinks;let i = index;">
+                    <li>{{link?.name}}</li>
+                </ng-container>
+            </ul>
+            <ul class="nav-settings">
+                <li>
+                    <img src="assets/images/icons/language-currency-logo.svg" alt="language-and-currency-icon"
+                        class="language-and-currency-icon">
+                    <a class="dropdowns">
+                        <span>{{ 'EN' | uppercase}}</span>
+                        <img src="assets/images/icons/arrow_drop_down_24px.svg">
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdowns">
+                        <span>{{ 'MYR' | uppercase}}</span>
+                        <img src="assets/images/icons/arrow_drop_down_24px.svg">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    
+
+    </div>
+    
+</div>

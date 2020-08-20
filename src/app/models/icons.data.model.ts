@@ -1,0 +1,10 @@
+export class ICONS{
+    INFLIGHT:ICON_PROPERTIES
+    AIRPORTCOLLECTION:ICON_PROPERTIES
+}
+
+
+interface ICON_PROPERTIES{
+    REGULAR:string
+    SMALL:string
+}

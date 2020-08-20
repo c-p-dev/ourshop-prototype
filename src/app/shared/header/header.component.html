@@ -1,102 +1,44 @@
-<div (window:resize)="onResize($event)" *ngIf="width > 1024">
-  <!-- *ngIf = "width > 1024" -->
-  <!-- <h1> ->>{{ width }} </h1> -->
-  <div class="wrapper">
-    <div>
-      <div class="header-filler center">
-        <div>
-          <a href="https://www.ourshop.com/">
-            <img id="logo" src="assets/images/ourshop_new_logo.png" />
-          </a>
-        </div>
-        <div class="search-filler">
-          <input class="search-textbox" type="text" placeholder="Search..." />
-          <input
-            class="icon"
-            type="image"
-            src="assets/images/search-icon@2x.png"
-            alt="Submit"
-          />
-        </div>
-        <div class="right-icons">
-          <div class="block">
-            <span>
-              <a href="https://www.w3schools.com">
-                <img class="language" src="assets/images/sphere-icon.svg" />
-              </a>
-            </span>
-          </div>
-          <div class="block">
-            <span>
-              <a href="https://www.w3schools.com">
-                <img class="person" src="assets/images/person.png" href="" />
-              </a>
-            </span>
-          </div>
-          <div class="block">
-            <span>
-              <a href="https://www.w3schools.com">
-                <img
-                  class="track-order"
-                  src="assets/images/track-order.svg"
-                  href=""
-                />
-              </a>
-            </span>
-          </div>
-          <div class="block">
-            <span>
-              <a href="https://www.w3schools.com">
-                <img
-                  class="track-icon"
-                  src="assets/images/cart-icon.svg"
-                  href=""
-                />
-              </a>
-            </span>
-          </div>
-        </div>
-      </div>
+<header>
+    <app-header-strip></app-header-strip>
+    <div class="user-header container">
+        <mat-grid-list cols="12" rowHeight="135px">
+            <mat-grid-tile colspan="1">
+                <a href="/">
+                    <img class="temp-aadf-logo" style="" src="assets/images/logo.svg" alt="">
+                </a>
+            </mat-grid-tile>
+            <mat-grid-tile colspan="6">
+                <div class="search">
+                    <img src="assets/images/icons/search-icon@2x.png" alt="search-icon" class="search-icon-new">
+                    <input id="inputId" type="text" placeholder="Search..." />
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile colspan="5">
+                <ul class="inline-list user-settings">
+                    <li>
+                        <div  matBadgeColor="warn" class="track-order-button-wrapper">
+                            Track your Order
+                        </div>
+                    </li>
+                    <li>
+                        <span matBadge="15" matBadgeColor="warn" >
+                            <img  class="cart-icon" alt="cart-icon"
+                            src="assets/images/icons/local_grocery_store_24px.svg">
+                        </span>
+                        <span class="cart-text">
+                            Cart 
+                        </span>
+                    </li>
+                    <li>
+                        <span class="img-select">
+                            <img alt="big-login-icon" class="big-login-icon" src="assets/images/person_24px-red.svg">
+                            Login
+                        </span>
+                    </li>
+                </ul>
+            </mat-grid-tile>
+        </mat-grid-list>
     </div>
-    <div>
-      <ul class="header-ul">
-        <li *ngFor="let item of categories">
-          <a class="items" style="cursor: pointer;">{{ item.name }}</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <!-- TODO IMPLEMENT HOVER EFFECT ON MEGAMENU -->
-  <div class="megamenu"></div>
-</div>
-<!-- mobile -->
-<div *ngIf="width < 1024">
-  <div id="mySidenav" class="sidenav">
-    <a class="closebtn" (click)="closeNavbar()" style="cursor: pointer;"
-      >&times;</a
-    >
-    <li *ngFor="let item of categories">
-      <a class="items" style="cursor: pointer;">{{ item.name }}</a>
-    </li>
-  </div>
-  <ul class="header-ul">
-    <li>
-      <span (click)="openNavbar()" style="font-size: 30px; cursor: pointer;"
-        >&#9776;</span
-      >
-    </li>
-    <li>
-      <a href="https://www.ourshop.com/">
-        <img id="logo" src="assets/images/ourshop_new_logo.png" />
-      </a>
-    </li>
-    <li>
-      <a>
-        <img class="icon" src="assets/images/search-icon@2x.png" />
-      </a>
-      <a>
-        <img class="track-icon" src="assets/images/cart-icon.svg" href="" />
-      </a>
-    </li>
-  </ul>
-</div>
+    <app-category-list></app-category-list>
+
+</header>
